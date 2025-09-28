@@ -1,9 +1,12 @@
 #include <stdio.h>
 
 /*
-    Desafio: Movimentando as Peças do Xadrez
-    Objetivo: Simular o movimento de 3 peças (Torre, Bispo e Rainha)
-    utilizando estruturas de repetição diferentes.
+    Desafio: Movimentando as Peças do Xadrez (Nível Novato + Nível Aventureiro)
+    Peças: Torre, Bispo, Rainha e Cavalo.
+    - Torre: 5 casas para a direita (for)
+    - Bispo: 5 casas na diagonal (while)
+    - Rainha: 8 casas para a esquerda (do-while)
+    - Cavalo: movimento em "L" (2 casas para baixo e 1 para esquerda) com loops aninhados
 */
 
 int main() {
@@ -43,6 +46,34 @@ int main() {
         printf("Esquerda\n");
         j++;
     } while (j <= casasRainha);
+
+    printf("\n");
+
+    // ===================== CAVALO =====================
+    // Cavalo: movimento em "L" (2 casas para baixo e 1 para esquerda)
+    // Estruturas usadas: FOR + WHILE (loops aninhados)
+    printf("Movimento do Cavalo:\n");
+    int movimentosBaixo = 2;
+    int movimentosEsquerda = 1;
+
+    // Loop FOR para controlar os dois blocos do movimento (vertical e horizontal)
+    for (int etapa = 1; etapa <= 2; etapa++) {
+        if (etapa == 1) {
+            // Movimento para baixo (2 casas)
+            int contador = 1;
+            while (contador <= movimentosBaixo) {
+                printf("Baixo\n");
+                contador++;
+            }
+        } else {
+            // Movimento para a esquerda (1 casa)
+            int contador = 1;
+            while (contador <= movimentosEsquerda) {
+                printf("Esquerda\n");
+                contador++;
+            }
+        }
+    }
 
     return 0;
 }
